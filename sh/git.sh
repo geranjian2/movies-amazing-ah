@@ -1,6 +1,7 @@
 salir=9
 Green='\033[0;32m'
 NC='\033[0m' # No Color
+name_branch='MOV'
 newBranchDevelop(){
 
 # Sirve para generar una nueva rama para un nuevo desarrollo.
@@ -8,7 +9,7 @@ newBranchDevelop(){
   git fetch
   git checkout develop
   git pull
-  git checkout -b "feature-PAY-$1-$2"
+  git checkout -b "feature-$name_branch-$1-$2"
   git branch
   git stash pop
   git add .
