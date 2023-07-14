@@ -1,5 +1,5 @@
-import { MovieExternalModel } from '../models';
+import { IMovieTmdb } from 'src/common/interface';
 
-export interface IMovieExternalRepository<T> {
-  getPopular: () => Promise<MovieExternalModel[]>;
+export interface IMovieExternalRepository {
+  getMoviesPopular: () => Promise<IMovieTmdb[]>;
 }

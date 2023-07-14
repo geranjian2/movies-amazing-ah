@@ -1,19 +1,25 @@
 import { MongooseModule } from '@nestjs/mongoose';
 import { Module } from '@nestjs/common';
-import { MovieSchema, UserSchema } from 'src/common/schemas/mongo';
+import { MovieSchema, UserSchema, schema } from 'src/common/schemas/mongo';
 import { UserRepository } from './user/user.repository';
-import { MoviesTmbdModule } from 'src/common/provider';
+import { MovieImpRepository } from './movie/movieImp.repository';
+import { IMOVIES_SHARED } from 'src/common/constants';
 
 @Module({
   imports: [
     MongooseModule.forFeature([
-      { name: 'User', schema: UserSchema },
-      { name: 'Movie', schema: MovieSchema },
+      { name: schema.USER, schema: UserSchema },
+      { name: schema.MOVIE, schema: MovieSchema },
     ]),
-    MoviesTmbdModule,
   ],
   controllers: [],
-  providers: [UserRepository],
-  exports: [UserRepository],
+  providers: [
+    UserRepository,
+    { provide: IMOVIES_SHARED.IMOVIEREPOSITORY, useClass: MovieImpRepository },
+  ],
+  exports: [
+    UserRepository,
+    { provide: IMOVIES_SHARED.IMOVIEREPOSITORY, useClass: MovieImpRepository },
+  ],
 })
 export class MongoModule {}

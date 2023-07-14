@@ -6,6 +6,6 @@ export class UserController {
   constructor(private readonly userRepository: UserRepository) {}
   @Get()
   async getAll() {
-    return await this.userRepository.getMovies();
+    // return await this.userRepository.getMovies();
   }
 }

@@ -1,0 +1,29 @@
+import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
+import { REPOSITORIES } from 'src/utils/constants/repositories';
+import { SEQUELIZE_PROVIDER } from 'src/utils/constants/sequelize-constants';
+import { WINSTON } from 'src/utils/constants/winston';
+import { Logger } from 'src/utils/logger/logger';
+import { {{pascalCase model}}Dto } from '../dto/{{dashCase model}}.dto';
+import { {{pascalCase model}}Entity } from '../{{dashCase model}}.entity';
+import { {{pascalCase model}}Query } from '../query/{{dashCase model}}.query';
+
+@Injectable()
+export class {{pascalCase name}}UseCase {
+  constructor(
+    @Inject(WINSTON) private readonly logger: Logger,
+    @Inject(REPOSITORIES.{{constantCase model}})
+    private readonly {{camelCase model}}Repository: typeof {{pascalCase model}}Entity,
+    @Inject(SEQUELIZE_PROVIDER)
+    private readonly sequelizeInstance,
+  ) {}
+
+  async run(): Promise<{{pascalCase model}}Dto[]> {
+    try {
+      
+      return data;
+    } catch (err) {
+      throw new HttpException(err.message, HttpStatus.CONFLICT);
+    }
+  }
+  
+}

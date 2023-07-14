@@ -1,14 +1,11 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, Types } from 'mongoose';
+import { Document } from 'mongoose';
 
 export type MovieDocument = Movie & Document;
 
 @Schema()
 export class Movie {
-  @Prop({ required: true })
-  movieApiId: string;
-
-  @Prop({ required: true })
+  @Prop({ required: true, index: true })
   movieIMDBid: string;
 
   @Prop({ required: true })
