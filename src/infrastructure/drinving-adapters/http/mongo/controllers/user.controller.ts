@@ -3,7 +3,7 @@ import { UserRepository } from 'src/infrastructure/implementations/mongo/user/us
 
 @Controller('user')
 export class UserController {
-  constructor(private readonly userRepository: UserRepository) {}
+  // constructor(private readonly userRepository: UserRepository) {}
   @Get()
   async getAll() {
     // return await this.userRepository.getMovies();

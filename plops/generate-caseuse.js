@@ -4,12 +4,12 @@ const { MONO_REPOS, USES_CASE } = require('./const');
 let routesTemplates = 'plop-templates/modules/';
 let params = [
   {
-    path: 'use-cases',
+    path: 'uses-cases',
     file: '{{dashCase name}}.usecase.service.ts',
     template: `${routesTemplates}/caseuse/nest.caseuse.hbs`,
   },
   {
-    path: 'use-cases',
+    path: 'uses-cases',
     file: 'caseuse.constants.ts',
     template: `${routesTemplates}/caseuse/nest.const.caseuse.hbs`,
   },
@@ -35,7 +35,7 @@ module.exports = {
     },
   ],
   actions: (data) => {
-    let defaultPath = `src/application/${data.monorepo}/`;
+    let defaultPath = `src/application/`;
     let arrayCOnfig = [];
     arrayCOnfig = params.map((e) => {
       return {

@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { MovieExternalModel } from '../models';
+import { MovieExternalModel } from '../../models';
 
 export class MovieExternalDto {
   constructor(register: MovieExternalModel) {
