@@ -40,7 +40,7 @@ export class UserRepository implements IUserRepository {
   getById: (dataId: string) => Promise<UserModel>;
   getOne: (filter: UserModel) => Promise<UserModel>;
   delete: (data: UserModel) => Promise<string>;
-  update: (data: UserModel) => Promise<UserModel>;
+  update: (data: UserModel) => Promise<string>;
 
   async getUsers(): Promise<User[]> {
     return this.userModel.find();

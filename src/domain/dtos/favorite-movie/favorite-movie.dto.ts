@@ -13,11 +13,8 @@ export class CreateFavoriteMovieDto {
 export class FavoriteMovieDto {
   constructor(register: FavoriteMovieModel) {
     this.movie = new MovieDto(register.movie);
-    // this.user = new UserDto(register.user);
   }
 
   @ApiProperty()
   movie: MovieModel;
-  // @ApiProperty()
-  // user: UserModel;
 }

@@ -10,12 +10,11 @@ import {
 } from 'src/application/uses-cases';
 import { MapperModule } from 'src/common/mappers/mapper.module';
 import { MongoModule } from 'src/infrastructure/implementations/mongo';
-import { JWT_EXPIRES, JWT_SECRET } from 'src/common/constants';
 import { LocalStrategy } from './strategies/local.strategy';
 import * as dotenv from 'dotenv';
-import { JwtAuthGuard } from './guards/jwt.auth.guard';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { LocalAuthGuard } from './guards/local-auth.guard';
+import { JWT_SECRET } from 'src/common/constants';
 dotenv.config();
 
 @Module({
@@ -27,7 +26,7 @@ dotenv.config();
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
-        secret: config.get<string>('JWT_SECRET'),
+        secret: config.get<string>(JWT_SECRET),
         signOptions: { expiresIn: '1s' },
       }),
     }),

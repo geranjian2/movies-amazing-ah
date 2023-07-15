@@ -23,5 +23,5 @@ export class FavoriteMovieImpRepository implements IFavoriteMovieRepository {
   getById: (dataId: string) => Promise<FavoriteMovieModel>;
   getOne: (filter: FavoriteMovieModel) => Promise<FavoriteMovieModel>;
   delete: (data: FavoriteMovieModel) => Promise<string>;
-  update: (data: FavoriteMovieModel) => Promise<FavoriteMovieModel>;
+  update: (data: FavoriteMovieModel) => Promise<string>;
 }

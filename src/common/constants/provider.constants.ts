@@ -11,3 +11,6 @@ export const IUSER_SHARED = {
 export const IFAVORITE_MOVIE_SHARED = {
   IFAVORITEMOVIEREPOSITORY: 'IFavoriteMovieRepository',
 };
+export const INOTES_MOVIE_SHARED = {
+  IMOVIENOTEREPOSITORY: 'IMovieNoteRepository',
+};
