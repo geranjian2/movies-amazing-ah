@@ -4,7 +4,7 @@ import { IsOptional } from 'class-validator';
 export class GetParamMovieSearchDto {
   @IsOptional()
   @ApiPropertyOptional({ default: '%%' })
-  readonly query?: string = '%%';
+  readonly q?: string = '%%';
   @IsOptional()
   @ApiPropertyOptional({ default: 'en' })
   readonly language?: string = 'en';

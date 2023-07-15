@@ -26,10 +26,10 @@ export class MoviesTmbdProviderService {
     return this.httpProviderService.get<IResultITmdb>(url);
   }
   async getMovieSearch({
-    query,
+    q,
     language,
   }: GetParamMovieSearchDto): Promise<IResultITmdb> {
-    const url = `/movie/search/movie?query=${query}&language=${language}?api_key=${this.apiKey}`;
+    const url = `/search/movie?query=${q}&language=${language}&api_key=${this.apiKey}`;
     return this.httpProviderService.get<IResultITmdb>(url);
   }
 }
