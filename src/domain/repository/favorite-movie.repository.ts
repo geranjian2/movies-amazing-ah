@@ -1,4 +1,7 @@
-import { MovieModel } from '../models';
+import { FavoriteMovieModel } from '../models';
 import { IBaseRepository } from './base.repository';
 
-export type IFavoriteMovieRepository = IBaseRepository<MovieModel>;
+export interface IFavoriteMovieRepository
+  extends IBaseRepository<FavoriteMovieModel> {
+  data?: string;
+}

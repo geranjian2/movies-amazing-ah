@@ -1,8 +1,9 @@
 // user.schema.ts
 
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, Types } from 'mongoose';
+import { Document, Types as MongooseSchema } from 'mongoose';
 import * as bcrypt from 'bcryptjs';
+import { FavoriteMovie } from './favorite-movie.schema';
 // import { Role } from './role.schema';
 
 export type UserDocument = User & Document;
@@ -23,8 +24,10 @@ export class User extends Document {
     return await bcrypt.compareSync(pass, this.password);
   }
 
-  //   @Prop({ type: Types.ObjectId, ref: 'Role' })
-  //   role: Role;
+  // @Prop({
+  //   type: [{ type: MongooseSchema.ObjectId, ref: 'FavoriteMovie' }],
+  // })
+  // favoriteMovie: FavoriteMovie[];
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

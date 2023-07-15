@@ -10,7 +10,7 @@ export class MovieService {
     private movieRepository: IMovieRepository,
   ) {}
   async findAll(): Promise<MovieDto[]> {
-    const movies = await this.movieRepository.getAll();
+    const movies = await this.movieRepository.getAll({});
     return movies.map((movie) => new MovieDto(movie));
   }
 }

@@ -1,4 +1,5 @@
 export interface IMovie {
+  _id?: string;
   movieIMDBid: number;
   languaje: string;
   genres: string;

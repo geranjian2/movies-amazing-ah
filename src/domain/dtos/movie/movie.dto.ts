@@ -3,6 +3,7 @@ import { MovieModel } from 'src/domain/models';
 
 export class MovieDto {
   constructor(register: MovieModel) {
+    this._id = register._id;
     this.movieIMDBid = register.movieIMDBid;
     this.languaje = register.languaje;
     this.genres = register.genres;
@@ -16,6 +17,8 @@ export class MovieDto {
     this.voteAvarage = register.voteAvarage;
     this.voteAcount = register.voteAcount;
   }
+  @ApiProperty()
+  _id;
   @ApiProperty()
   movieIMDBid;
   @ApiProperty()

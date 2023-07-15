@@ -34,7 +34,9 @@ export class UserRepository implements IUserRepository {
     await createdUser.save();
     return CREATE;
   }
-  getAll: () => Promise<UserModel[]>;
+  getAll(data: UserModel): Promise<UserModel[]> {
+    return this.userModel.find(data);
+  }
   getById: (dataId: string) => Promise<UserModel>;
   getOne: (filter: UserModel) => Promise<UserModel>;
   delete: (data: UserModel) => Promise<string>;

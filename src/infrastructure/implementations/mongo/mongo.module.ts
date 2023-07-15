@@ -14,6 +14,7 @@ import {
   IUSER_SHARED,
 } from 'src/common/constants';
 import { MapperModule } from 'src/common/mappers/mapper.module';
+import { FavoriteMovieImpRepository } from './favorite-movies/favorite-movieImp.repository';
 
 @Module({
   imports: [
@@ -30,7 +31,7 @@ import { MapperModule } from 'src/common/mappers/mapper.module';
     { provide: IUSER_SHARED.IUSERREPOSITORY, useClass: UserRepository },
     {
       provide: IFAVORITE_MOVIE_SHARED.IFAVORITEMOVIEREPOSITORY,
-      useClass: UserRepository,
+      useClass: FavoriteMovieImpRepository,
     },
   ],
   exports: [
@@ -38,7 +39,7 @@ import { MapperModule } from 'src/common/mappers/mapper.module';
     { provide: IUSER_SHARED.IUSERREPOSITORY, useClass: UserRepository },
     {
       provide: IFAVORITE_MOVIE_SHARED.IFAVORITEMOVIEREPOSITORY,
-      useClass: UserRepository,
+      useClass: FavoriteMovieImpRepository,
     },
   ],
 })

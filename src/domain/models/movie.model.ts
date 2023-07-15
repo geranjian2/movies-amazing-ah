@@ -1,4 +1,5 @@
 export class MovieModel {
+  _id?: string;
   movieIMDBid?: number;
   languaje?: string;
   genres?: string;
