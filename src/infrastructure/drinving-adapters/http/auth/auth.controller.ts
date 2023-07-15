@@ -25,6 +25,7 @@ export class AuthController {
   @Post('login')
   async login(
     @User() user: UserDto,
+    @Body() data: LoginDto,
   ): Promise<{ user: UserDto; accessToken: string }> {
     return await this.authLoginUseCase.run(user);
   }

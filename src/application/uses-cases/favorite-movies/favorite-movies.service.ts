@@ -23,6 +23,7 @@ export class FavoriteMoviesService {
       movie._id = data.movieId;
       favoriteMovie.movie = movie;
       favoriteMovie.user = user;
+
       return this.favoriteMovieRepository.save(favoriteMovie);
     } catch (err) {
       throw new HttpException(err.message, HttpStatus.CONFLICT);

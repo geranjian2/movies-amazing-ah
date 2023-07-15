@@ -13,5 +13,5 @@ export class RegisterDto {
   @ApiProperty()
   email: string;
   @ApiProperty()
-  password: string;
+  password?: string;
 }

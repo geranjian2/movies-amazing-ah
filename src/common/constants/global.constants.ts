@@ -4,3 +4,4 @@ export const TMDB_API_KEY = 'TMDB_API_KEY';
 export const TMDB_ACCESS_TOKEN = 'TMDB_ACCESS_TOKEN';
 export const JWT_SECRET = 'JWT_SECRET';
 export const JWT_EXPIRES = 'JWT_EXPIRES';
+export const SERVER_PORT = 'SERVER_PORT';
