@@ -83,7 +83,11 @@
       "js",
       "json",
       "ts"
-    ],
+    ],"husky": {
+      "hooks": {
+        "pre-commit": "npm run lint -- --fix"
+      }
+    },  
     "rootDir": "src",
     "modulePaths": [
       "<rootDir>/src"
