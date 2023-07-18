@@ -1,0 +1,39 @@
+service: movies-amazing
+
+frameworkVersion: '3'
+
+plugins:
+  - serverless-jetpack
+  - serverless-offline
+
+package:
+  exclude:
+    - .git/**
+    - src/**
+    - test/**
+    - e2e/**
+    - nodemon.json
+    - README.md
+
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  region: us-east-1
+  stage: production
+  memorySize: 2048
+  logRetentionInDays: 1
+  timeout: 15
+
+functions:
+  api:
+    handler: dist/lambda.handler
+    events:
+      - httpApi: "*"
+      - http:
+          method: any
+          path: /{proxy+}
+      - http:
+          cors: true
+          path: "/"
+          method: any
