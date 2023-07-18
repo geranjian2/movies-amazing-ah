@@ -18,7 +18,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "bash": "bash options.sh"
+    "bash": "bash options.sh",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@nestjs/axios": "^3.0.0",
@@ -37,6 +38,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "dotenv": "^16.3.1",
+    "husky": "^8.0.3",
     "mongoose": "^7.3.3",
     "mongoose-autopopulate": "^1.0.1",
     "passport": "^0.6.0",
@@ -81,7 +83,11 @@
       "js",
       "json",
       "ts"
-    ],
+    ],"husky": {
+      "hooks": {
+        "pre-commit": "npm run lint -- --fix"
+      }
+    },  
     "rootDir": "src",
     "modulePaths": [
       "<rootDir>/src"
@@ -102,5 +108,11 @@
     },
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint -- --fix"
+    }
   }
+
 }
