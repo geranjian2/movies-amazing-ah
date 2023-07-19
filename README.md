@@ -1,7 +1,7 @@
 
 ## Description
 
-Project Integration API https://developer.themoviedb.org/ with project Nest framework and Mongo. Sinchronize movies of tmdb to mongo persistence
+Project Integration API https://developer.themoviedb.org/ with project Nest framework and Mongo. synchronization movies of tmdb to mongo database
 
 **Modules**
 
