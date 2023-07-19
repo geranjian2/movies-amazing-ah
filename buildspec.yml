@@ -12,8 +12,6 @@ phases:
       - npm install --silent --no-progress
       - npm run build
   build:
-    runtime-versions:
-      nodejs: 16.x
     commands:
       - sls deploy --verbose
   post_build:
