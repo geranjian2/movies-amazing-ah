@@ -15,7 +15,7 @@ phases:
       - npm run build
   build:
     commands:
-      - sls deploy --verbose
+      - serverless deploy
   post_build:
     commands: 
       - echo "run tests here"
