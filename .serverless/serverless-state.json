@@ -8,7 +8,7 @@
       "name": "aws",
       "runtime": "nodejs16.x",
       "region": "us-east-1",
-      "stage": "",
+      "stage": "dev",
       "memorySize": 2048,
       "logRetentionInDays": 1,
       "timeout": 15,
@@ -89,7 +89,7 @@
           "ApiLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/movies-amazing-pro--api",
+              "LogGroupName": "/aws/lambda/movies-amazing-pro-dev-api",
               "RetentionInDays": 1
             }
           },
@@ -136,7 +136,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/movies-amazing-pro--api:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/movies-amazing-pro-dev*:*"
                           }
                         ]
                       },
@@ -147,7 +147,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/movies-amazing-pro--api:*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/movies-amazing-pro-dev*:*:*"
                           }
                         ]
                       }
@@ -178,11 +178,11 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/movies-amazing-pro/dev/1689868679398-2023-07-20T15:57:59.398Z/movies-amazing-pro.zip"
+                "S3Key": "serverless/movies-amazing-pro/dev/1689870095830-2023-07-20T16:21:35.830Z/movies-amazing-pro.zip"
               },
               "Handler": "dist/lambda.handler",
               "Runtime": "nodejs16.x",
-              "FunctionName": "movies-amazing-pro--api",
+              "FunctionName": "movies-amazing-pro-dev-api",
               "MemorySize": 2048,
               "Timeout": 15,
               "Role": {
@@ -196,14 +196,14 @@
               "ApiLogGroup"
             ]
           },
-          "ApiLambdaVersiond3HyuFwZxMK579KHlnOvLsPIw4MmqvO88mPgCUKKc0": {
+          "ApiLambdaVersionsJ6cdrUXgUatB1uOqXZX3UotycKC0DTBjuQ5ukt8Hc": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "TQj2+p6e9kooFJ1d4/YSSnxZjrfdMhIoy7pu/qN0zr4="
+              "CodeSha256": "k0UO/lvFPhbo2geTiW3KFmtjFcSS4Z51bWlUjf4SF70="
             }
           },
           "ApiGatewayRestApi": {
@@ -376,7 +376,7 @@
               "ApiLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1689868672121": {
+          "ApiGatewayDeployment1689870088734": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -532,7 +532,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersiond3HyuFwZxMK579KHlnOvLsPIw4MmqvO88mPgCUKKc0"
+              "Ref": "ApiLambdaVersionsJ6cdrUXgUatB1uOqXZX3UotycKC0DTBjuQ5ukt8Hc"
             },
             "Export": {
               "Name": "sls-movies-amazing-pro-dev-ApiLambdaFunctionQualifiedArn"
@@ -729,13 +729,13 @@
             }
           }
         ],
-        "name": "movies-amazing-pro--api",
+        "name": "movies-amazing-pro-dev-api",
         "package": {},
         "memory": 2048,
         "timeout": 15,
         "runtime": "nodejs16.x",
         "vpc": {},
-        "versionLogicalId": "ApiLambdaVersiond3HyuFwZxMK579KHlnOvLsPIw4MmqvO88mPgCUKKc0"
+        "versionLogicalId": "ApiLambdaVersionsJ6cdrUXgUatB1uOqXZX3UotycKC0DTBjuQ5ukt8Hc"
       }
     },
     "configValidationMode": "warn",
@@ -757,7 +757,7 @@
         ],
         "artifactsS3KeyDirname": "serverless/movies-amazing-pro/dev/code-artifacts",
         "artifact": ".serverless/movies-amazing-pro.zip",
-        "artifactDirectoryName": "serverless/movies-amazing-pro/dev/1689868679398-2023-07-20T15:57:59.398Z"
+        "artifactDirectoryName": "serverless/movies-amazing-pro/dev/1689870095830-2023-07-20T16:21:35.830Z"
       },
       "provider": {
         "$ref": "$[\"service\"][\"provider\"]"
@@ -770,7 +770,7 @@
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/movies-amazing-pro/dev/1689868679398-2023-07-20T15:57:59.398Z",
+    "artifactDirectoryName": "serverless/movies-amazing-pro/dev/1689870095830-2023-07-20T16:21:35.830Z",
     "artifact": "movies-amazing-pro.zip"
   }
 }
