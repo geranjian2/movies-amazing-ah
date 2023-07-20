@@ -21,5 +21,5 @@ phases:
       - serverless deploy
   post_build:
     commands: 
-      - echo "run tests here"
+      - echo "run tests here!!"
   
