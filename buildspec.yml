@@ -13,6 +13,8 @@ phases:
     commands:
       - npm install --silent --no-progress
       - npm run build
+      - ls -l 
+      - echo files build
   build:
     commands:
       - serverless remove
