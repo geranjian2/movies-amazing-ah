@@ -17,7 +17,7 @@ phases:
       - echo files build
   build:
     commands:
-      - serverless remove
+      # - serverless remove
       - serverless deploy
   post_build:
     commands: 
