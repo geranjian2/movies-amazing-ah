@@ -70,12 +70,12 @@ sls deploy --verbose
 
 
 ## Deploy Aws Lambda
-https://5xzt219zte.execute-api.us-east-1.amazonaws.com/
+https://v1i7w11jb1.execute-api.us-east-1.amazonaws.com/
 
 
 ## Documentation Swagger
 
-https://5xzt219zte.execute-api.us-east-1.amazonaws.com/production/docs
+https://v1i7w11jb1.execute-api.us-east-1.amazonaws.com/docs
 
 ## License
 
