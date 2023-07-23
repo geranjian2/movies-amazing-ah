@@ -15,6 +15,7 @@ import * as dotenv from 'dotenv';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { LocalAuthGuard } from './guards/local-auth.guard';
 import { JWT_SECRET } from 'src/common/constants';
+import { GoogleStrategy } from './strategies/google.strategy';
 dotenv.config();
 
 @Module({
@@ -38,9 +39,10 @@ dotenv.config();
     AuthService,
     AuthRegisterUseCase,
     AuthLoginAccessUseCase,
-    LocalStrategy,
     LocalAuthGuard,
+    LocalStrategy,
     JwtStrategy,
+    GoogleStrategy,
     JwtService,
   ],
 })
