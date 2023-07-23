@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18.x
+    commands:
+      - echo install npm
+      - npm install --silent --no-progress -g npm
+      - echo install serverless framework
+      - npm install --silent --no-progress -g serverless@3.33.0
+  pre_build:
+    commands:
+      - npm install --silent --no-progress
+      - npm run build
+      - ls -l 
+      - echo files build
+  build:
+    commands:
+      # - serverless remove
+      - serverless deploy
+  post_build:
+    commands: 
+      - echo "run tests here!!"
+  
